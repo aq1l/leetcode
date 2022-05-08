@@ -3,6 +3,10 @@ package palindromeLinkedList
 // URL 		  - https://leetcode.com/problems/palindrome-linked-list/
 // Difficulty - Easy
 
+/*
+ * Given the head of a singly linked list, return true if it is a palindrome.
+ */
+
 type ListNode struct {
 	Val  int
 	Next *ListNode
