@@ -17,9 +17,9 @@ func NewListFromSlice(data []int) *ListNode {
 		return nil
 	}
 
-	head, prev := &ListNode{}, &ListNode{}
+	head := &ListNode{}
 	head.Val = data[0]
-	prev = head
+	prev := head
 
 	data = data[1:]
 	for i := range data {
