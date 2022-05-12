@@ -1,5 +1,7 @@
 package palindromeLinkedList
 
+import "leetcode/utils/go/linkedList"
+
 // URL 		  - https://leetcode.com/problems/palindrome-linked-list/
 // Difficulty - Easy
 
@@ -7,33 +9,8 @@ package palindromeLinkedList
  * Given the head of a singly linked list, return true if it is a palindrome.
  */
 
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
-
-func NewListFromSlice(data []int) *ListNode {
-	if len(data) == 0 {
-		return nil
-	}
-
-	head := &ListNode{}
-	head.Val = data[0]
-	prev := head
-
-	data = data[1:]
-	for i := range data {
-		next := &ListNode{}
-		next.Val = data[i]
-		prev.Next = next
-		prev = next
-	}
-
-	return head
-}
-
 // Converting to slice then check if palindrome
-func isPalindromeWithSlice(head *ListNode) bool {
+func isPalindromeWithSlice(head *linkedList.ListNode) bool {
 	temp := head
 	var values []int
 	for temp != nil {
@@ -53,7 +30,7 @@ func isPalindromeWithSlice(head *ListNode) bool {
 // 1. Find midpoint
 // 2. Reverse the half
 // 3. Compare values
-func isPalindrome(head *ListNode) bool {
+func isPalindrome(head *linkedList.ListNode) bool {
 	slow, fast := head, head
 	for fast != nil && fast.Next != nil {
 		slow = slow.Next
@@ -64,7 +41,7 @@ func isPalindrome(head *ListNode) bool {
 		slow = slow.Next
 	}
 
-	revers := reverseList(slow)
+	revers := linkedList.Reverse(slow)
 	for revers != nil {
 		if head.Val != revers.Val {
 			return false
@@ -74,17 +51,4 @@ func isPalindrome(head *ListNode) bool {
 	}
 
 	return true
-}
-
-func reverseList(head *ListNode) *ListNode {
-	var prev *ListNode
-	cur := head
-	for cur != nil {
-		next := cur.Next
-		cur.Next = prev
-		prev = cur
-		cur = next
-	}
-
-	return prev
 }

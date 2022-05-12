@@ -1,5 +1,7 @@
 package middleOfLinkedList
 
+import "leetcode/utils/go/linkedList"
+
 // URL 		  - https://leetcode.com/problems/middle-of-the-linked-list/
 // Difficulty - Easy
 
@@ -9,32 +11,7 @@ package middleOfLinkedList
  * If there are two middle nodes, return the second middle node.
  */
 
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
-
-func NewListFromSlice(data []int) *ListNode {
-	if len(data) == 0 {
-		return nil
-	}
-
-	head := &ListNode{}
-	head.Val = data[0]
-	prev := head
-
-	data = data[1:]
-	for i := range data {
-		next := &ListNode{}
-		next.Val = data[i]
-		prev.Next = next
-		prev = next
-	}
-
-	return head
-}
-
-func middleNode(head *ListNode) *ListNode {
+func middleNode(head *linkedList.ListNode) *linkedList.ListNode {
 	// If there is just one node
 	if head.Next == nil {
 		return head
