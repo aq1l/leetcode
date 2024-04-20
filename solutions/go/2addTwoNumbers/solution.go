@@ -1,6 +1,6 @@
 package addTwoNumbers
 
-import "leetcode/utils/go/linkedList"
+import "leetcode/utils/linkedList"
 
 // URL 		  - https://leetcode.com/problems/add-two-numbers/
 // Difficulty - Medium

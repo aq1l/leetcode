@@ -1,6 +1,6 @@
 package middleOfLinkedList
 
-import "leetcode/utils/go/linkedList"
+import "leetcode/utils/linkedList"
 
 // URL 		  - https://leetcode.com/problems/middle-of-the-linked-list/
 // Difficulty - Easy

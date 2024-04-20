@@ -1,6 +1,6 @@
 package palindromeLinkedList
 
-import "leetcode/utils/go/linkedList"
+import "leetcode/utils/linkedList"
 
 // URL 		  - https://leetcode.com/problems/palindrome-linked-list/
 // Difficulty - Easy

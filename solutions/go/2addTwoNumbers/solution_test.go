@@ -1,7 +1,7 @@
 package addTwoNumbers
 
 import (
-	"leetcode/utils/go/linkedList"
+	"leetcode/utils/linkedList"
 	"testing"
 
 	"github.com/stretchr/testify/assert"

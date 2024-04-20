@@ -1,5 +1,7 @@
 package linkedList
 
+import "fmt"
+
 type ListNode struct {
 	Val  int
 	Next *ListNode
@@ -24,6 +26,22 @@ func NewListFromSlice(data []int) *ListNode {
 	}
 
 	return head
+}
+
+func (l *ListNode) String() string {
+	s := "["
+	tempHead := l
+	for tempHead != nil {
+		s += fmt.Sprintf("%v", tempHead.Val)
+
+		if tempHead.Next != nil {
+			s += ", "
+		}
+
+		tempHead = tempHead.Next
+	}
+
+	return s + "]"
 }
 
 // CompareLists - returns boolean which indicates if all nodes' value is equal in passed two lists.
